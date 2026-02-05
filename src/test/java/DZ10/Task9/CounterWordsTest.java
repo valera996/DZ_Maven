@@ -16,7 +16,7 @@ public class CounterWordsTest {
      2) Строка с несколькими словами, с пробелами "яблоко очень вкусное" -> 3
      3) Строка пустая "" -> 0
      Негативные сценарии
-     1) Строка null -> IllegalArgumentException
+     1) Строка null -> NullPointerException
      */
     private CounterWords counterWords;
     @BeforeEach

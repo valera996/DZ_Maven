@@ -17,7 +17,7 @@ public class CountVowelsTest {
      1)Проверка количества гласных букв в слове не содержащим гласные буквы "GGGgg" -> 0
      Угловые сценарии
      1)Проверка количества гласных букв в Null -> IllegalArgumentException
-     2)Проверка количества гласных букв в "" -> IllegalArgumentException
+     2)Проверка количества гласных букв в "" -> 0
      */
 
     private  CountVowels countVowels;

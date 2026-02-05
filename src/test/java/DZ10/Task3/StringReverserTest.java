@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class StringReverserTest extends StringReverserSetUp{
 
@@ -32,7 +33,7 @@ public class StringReverserTest extends StringReverserSetUp{
     @Test
     public void reverseNullString(){
         String actualResult = stringReverser.reverse(null);
-        assertEquals(null,actualResult);
+        assertNull(actualResult);
     }
     @DisplayName("Разворот пустой строки")
     @Test

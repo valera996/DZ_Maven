@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -40,9 +39,9 @@ public class FactorialCalculationTest {
     @DisplayName("Выброс исключения при попытке рассчитать факториал отрицательного числа")
     @Test
     public void factorialCalculationWithNegativeNumber(){
-        assertThrows(IllegalArgumentException.class,() ->{
-            int actualResult = factorialCalculation.factorial(-5);
-        });
+        assertThrows(IllegalArgumentException.class,() ->
+           factorialCalculation.factorial(-5)
+        );
     }
    @DisplayName("Факториал от 0")
     @Test

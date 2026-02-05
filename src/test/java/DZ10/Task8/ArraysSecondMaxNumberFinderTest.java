@@ -15,19 +15,22 @@ public class ArraysSecondMaxNumberFinderTest extends ArraysSecondMaxNumberFinder
      Позитивные сценарии
      1) Обычный массив больше 1 числа, позитивные числа [1,2,3,4,5] -> 4
      2) Обычный массив больше 1 числа , отрицательные числа [-1,-2,-3,-4,-5] -> -2
+     3) Массив из дубликатов и уникальных чисел [2,2,3] -> 2
      Негативные сценарии
      1) Пустой массив -> NoSuchElementException
      2) Массив с одинаковыми числами -> NoSuchElementException
      3) Массив с одним числом -> NoSuchElementException
      */
 
+    //Добавил проверку с массивом содержащим дубликаты и уникальные числа
     public static Stream<Arguments> arrayForTest(){
         return Stream.of(
                 Arguments.of(new int[]{1,2,3,4,5},4),
-                Arguments.of(new int[]{-1,-2,-3,-4,-5}, -2)
+                Arguments.of(new int[]{-1,-2,-3,-4,-5}, -2),
+                Arguments.of(new int[]{2,2,3}, 2)
         );
     }
-    @DisplayName("Поиск второго макс числа массива из более чем одного положительного и не положительного числа")
+    @DisplayName("Поиск второго макс числа массива из более чем одного положительного/не положительного числа и массива, содержащим дубликаты и уникальные числа ")
     @ParameterizedTest
     @MethodSource("arrayForTest")
     public void findSecondMaxNumberFromMoreThanOneDigitArray(int[] array, int expectedResult){
@@ -43,7 +46,7 @@ public class ArraysSecondMaxNumberFinderTest extends ArraysSecondMaxNumberFinder
                 Arguments.of(new int[]{})
         );
     }
-    @DisplayName("Поиск второго макс числа не валибного массива : из одного число, пустого массива, массива с одинаковыми числами")
+    @DisplayName("Поиск второго макс числа не валибного массива : из одного числа, пустого массива, массива с одинаковыми числами")
     @ParameterizedTest
     @MethodSource("invalidArrayForTest")
     public void findSecondMaxNumberFromInvalidArray(int[] array){

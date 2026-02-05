@@ -14,9 +14,9 @@ public class PhoneNumberCheckerTest {
      Позитивные сценарии
      1)Валидный нормер телефона "+1 1234567890" -> true
      Негативныые сценарии
-     1)Не валидный номер телеофна "12345", "invalid" -> false
+     1)Не валидный номер телефона "12345", "invalid" -> false
      Угловой сценарий
-     1) Номер телефона null -> IllegalArgumentException
+     1) Номер телефона null -> NullPointerException
      */
 
     private PhoneNumberChecker phoneNumberChecker;
