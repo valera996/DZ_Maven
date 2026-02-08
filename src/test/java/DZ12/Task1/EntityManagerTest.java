@@ -1,15 +1,11 @@
-package DZ12;
+package DZ12.Task1;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-public class EntityManagerTest extends EntityManagerSetUp{
+public class EntityManagerTest extends EntityManagerSetUp {
 
     /**
      -Метод для добавления объекта в коллекцию
