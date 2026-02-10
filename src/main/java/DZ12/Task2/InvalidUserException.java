@@ -1,4 +1,7 @@
 package DZ12.Task2;
 
-public class InvalidUserException {
+public class InvalidUserException extends RuntimeException{
+    public InvalidUserException(String message){
+        super(message);
+    }
 }

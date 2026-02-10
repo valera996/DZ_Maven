@@ -1,4 +1,4 @@
-package DZ12;
+package DZ12.Task1;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

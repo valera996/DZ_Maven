@@ -1,4 +1,4 @@
-package DZ12;
+package DZ12.Task1;
 
 public abstract class Entity {
     private String name;
