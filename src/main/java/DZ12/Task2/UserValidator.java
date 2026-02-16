@@ -15,13 +15,16 @@ public class UserValidator {
         if(validationEnabled == false){
             return true;
         }else {
+            if(user == null){
+                throw new InvalidUserException("Ошибка, user не может быть null");
+            }
             if (user.getName() == null) {
                 throw new InvalidUserException("Ошибка, имя не может быть null");
             }
             if (user.getName().isEmpty()) {
                 throw new InvalidUserException("Ошибка, имя не может быть пустым");
             }
-            if (user.getName().equals(user.getName().toLowerCase())) {
+            if (!Character.isUpperCase(user.getName().charAt(0))) {
                 throw new InvalidUserException("Ошибка, имя должно начинаться с заглавной буквы");
             } else return true;
         }
@@ -32,6 +35,9 @@ public class UserValidator {
         if (validationEnabled == false) {
             return true;
         } else {
+            if(user == null){
+                throw new InvalidUserException("Ошибка, user не может быть null");
+            }
             if (user.getAge() < 18) {
                 throw new InvalidUserException("Ошибка возраст не должен быть меньше 18");
             }
@@ -45,12 +51,21 @@ public class UserValidator {
     public boolean checkUserByEmail(User user){
         if(validationEnabled == false){
             return true;
-        }else {
-            if(!user.getEmail().matches("^[A-Za-z0-9+_.-]+@(.+)$")){
-                throw new InvalidUserException("Email не валидный");
-            }else return true;
         }
-    }
+        else {
+            if(user == null){
+                throw new InvalidUserException("Ошибка, user не может быть null");
+            }
+            if (user.getEmail() == null) {
+                throw new InvalidUserException("Email не валидный");
+            }
+            if (!user.getEmail().matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+                throw new InvalidUserException("Email не валидный");
+            }
+            else return true;
+            }
+        }
+
 
 
 

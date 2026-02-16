@@ -48,9 +48,10 @@ public class MovieServiceTest extends MovieServiceTestSetUp {
     @DisplayName("Добавление оценки  1, 2, 9, 10 к ещё не существующему в списке фильму")
     @ParameterizedTest
     @MethodSource("validRatingForFilm")
-    public void addRatingForNotContainedFilm(Movie movie, Rating<Integer> rating){
+    public void addRatingForNotContainedFilm( Movie movie, Rating<Integer> rating){
         movieService.addRating(movie,rating);
         assertTrue(movieService.getAll().get(movie).contains(rating));
+
     }
 
     @DisplayName("Добавление оценки  1, 2, 9, 10 к уже существующему в списке фильму")
